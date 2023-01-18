@@ -45,3 +45,14 @@ If *displayChart* is true, the *drawChart* function is called. This function cre
 The *bars* are then rendered using the *chartData* state, with their heights and colors determined by the scales.
 
 The component also has simple *error* and *loading* state handling, displaying a message if there is an error or if the data is still loading.
+
+
+**Challenges Faced**
+
+This was my first time using GraphQL and d3, so I faced some challenges while building this project.
+
+* Working with GraphQL was new to me, so it took some time to understand the concepts and how to use the @apollo/client library to fetch data from the API. I also had to learn how to structure the GraphQL query and how to handle the returned data.
+
+* I was also unfamiliar with D3, so I had to learn how to utilize it to produce the histogram chart. I had to learn about scales and axes, as well as how to link data to a chart. I also had to learn about other scales, such as band and linear scales, and how to utilize them in the chart.
+
+Overall, working with these technologies was a both rewarding and challenging experience, and I learnt a lot while developing this project.
