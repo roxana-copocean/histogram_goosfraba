@@ -4,7 +4,7 @@ This project is a histogram chart built with D3 and React. It displays the numbe
 
 **Getting Started**
 
-* Clone the repository by running `git clone ` in your command line.
+* Clone the repository by running `git clone https://github.com/roxana-copocean/histogram_goosfraba.git` in your command line.
 * Run `npm install` to install all the dependencies.
 * Run `npm start` to start the development server.
 * The application will be running on `http://localhost:3000/.`
