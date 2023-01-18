@@ -1,70 +1,47 @@
-# Getting Started with Create React App
+# Histogram Chart with D3 and React
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is a histogram chart built with D3 and React. It displays the number of posts created by month using data from a GraphQL API.
 
-## Available Scripts
+**Getting Started**
 
-In the project directory, you can run:
+* Clone the repository by running `git clone ` in your command line.
+* Run `npm install` to install all the dependencies.
+* Run `npm start` to start the development server.
+* The application will be running on `http://localhost:3000/.`
 
-### `npm start`
+**Dependencies**
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+* `@apollo/client` for making GraphQL requests.
+* `d3` for creating the chart.
+* `react` and `react-dom` for 
+building the user interface.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+<br>
 
-### `npm test`
+**Code Structure**
+<br>
+The main code for the histogram chart can be found in *src/Histogram.js.*
+<br>
+This is the main component that renders the histogram chart. It takes in the width and height props to set the size of the chart.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+The *useQuery hook* from @apollo/client is used to fetch data from the GraphQL API.
+<br>
+<br>
+**chartData** 
+<br>
+Is the state variable that holds the data for the chart. *setChartData* is the function used to update the state.
 
-### `npm run build`
+The useEffect hook is used to fetch the data and update the state when the component is mounted.
+If the data is returned from the API, it is processed to create an object that has the number of posts for each month.
+The processed data is then mapped to an array of objects where each object has the month and count of posts.
+<br>
+<br>
+**drawChart()**
+<br>
+The *drawChart* function is called to render the chart with the updated data.
+<br>
+If *displayChart* is true, the *drawChart* function is called. This function creates the chart using D3.js.
+<br>
+The *bars* are then rendered using the *chartData* state, with their heights and colors determined by the scales.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+The component also has simple *error* and *loading* state handling, displaying a message if there is an error or if the data is still loading.
